@@ -3,6 +3,20 @@
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
+
+const getAllStudentsUrl = 'http://localhost:8080/students/'
+const getStudentByIdUrl = (id) =>`http://localhost:8080/students/${id}`
+
+
 export const environment = {
-  production: false
+  envName: 'dev',
+  production: false,
+
+  student: {
+    getAllUrl: getAllStudentsUrl,
+    getByIdUrl: getStudentByIdUrl
+
+  }
+
+
 };

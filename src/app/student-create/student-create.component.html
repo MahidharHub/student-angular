@@ -1,0 +1,141 @@
+<div class="card-body" style="border-color: #142fc9 ">
+
+  <div class="float-center" >
+      <h4 class="card-title" style="color:#142fc9">Student</h4>
+
+    </div>
+
+
+      <br>
+  
+
+  <form [formGroup]="angForm"   style="border-color: #142fc9 ">
+
+
+       
+
+
+          &nbsp;<div class="form-inline">
+                  <label class="col-md-2" >FirstName : </label>
+
+
+                  <input type="text" class="form-control"  id="firstName" name="firstName" formControlName="firstName"    style="width: 300px;max-height: 40px;"  size="40" />
+
+                  &nbsp;
+                  <div *ngIf="angForm.controls['firstName'].invalid && (angForm.controls['firstName'].dirty || angForm.controls['firstName'].touched)" class="alert alert-danger form-inline"  style="width: 200px;max-height: 40px;" >
+                      <div *ngIf="angForm.controls['firstName'].errors.required" >
+                        firstName is required.
+                     </div>
+                  </div>
+        </div>
+
+
+
+        &nbsp;<div class="form-inline">
+              <label class="col-md-2" >LastName : </label>
+
+
+              <input type="text" class="form-control"  id="lastName" name="lastName" formControlName="lastName"   style="width: 300px;max-height: 40px;"  size="40" />
+
+              &nbsp;
+              <div *ngIf="angForm.controls['lastName'].invalid && (angForm.controls['lastName'].dirty || angForm.controls['lastName'].touched)" class="alert alert-danger form-inline"  style="width: 200px;max-height: 40px;" >
+                  <div *ngIf="angForm.controls['lastName'].errors.required" >
+                    lastName is required.
+                 </div>
+              </div>
+    </div>
+
+    &nbsp;<div class="form-inline">
+      <label class="col-md-2" >enrolledCourse : </label>
+
+
+      <input type="text" class="form-control"  id="enrolledCourse" name="enrolledCourse" formControlName="enrolledCourse"   style="width: 300px;max-height: 40px;"  size="40" />
+
+      &nbsp;
+      <div *ngIf="angForm.controls['enrolledCourse'].invalid && (angForm.controls['enrolledCourse'].dirty || angForm.controls['enrolledCourse'].touched)" class="alert alert-danger form-inline"  style="width: 200px;max-height: 40px;" >
+          <div *ngIf="angForm.controls['enrolledCourse'].errors.required" >
+            enrolledCourse is required.
+         </div>
+      </div>
+</div>
+
+&nbsp;<div class="form-inline">
+  <label class="col-md-2" >Date : </label>
+  <input type="text"
+  placeholder="Pick the date"
+  class="form-control" id="enrolledDate"  name="enrolledDate" formControlName="enrolledDate"
+  bsDatepicker  style="width: 300px;max-height: 40px;">
+
+
+
+  &nbsp;
+  <div *ngIf="angForm.controls['enrolledDate'].invalid && (angForm.controls['enrolledDate'].dirty || angForm.controls['enrolledDate'].touched)" class="alert alert-danger form-inline"  style="width: 200px;max-height: 40px;" >
+      <div *ngIf="angForm.controls['enrolledDate'].errors.required" >
+        date is required.
+     </div>
+  </div>
+</div>
+
+&nbsp;<div class="form-inline">
+  <label class="col-md-2" >City : </label>
+
+
+  <input type="text" class="form-control"  id="city" name="city" formControlName="city"   style="width: 300px;max-height: 40px;"  size="40" />
+
+  &nbsp;
+  <div *ngIf="angForm.controls['city'].invalid && (angForm.controls['city'].dirty || angForm.controls['city'].touched)" class="alert alert-danger form-inline"  style="width: 200px;max-height: 40px;" >
+      <div *ngIf="angForm.controls['city'].errors.required" >
+        city is required.
+     </div>
+  </div>
+</div>
+
+&nbsp;<div class="form-inline">
+  <label class="col-md-2" >Postcode : </label>
+
+
+  <input type="text" class="form-control"  id="postcode" name="postcode" formControlName="postcode"   style="width: 300px;max-height: 40px;"  size="40" />
+
+  &nbsp;
+  <div *ngIf="angForm.controls['postcode'].invalid && (angForm.controls['postcode'].dirty || angForm.controls['postcode'].touched)" class="alert alert-danger form-inline"  style="width: 200px;max-height: 40px;" >
+      <div *ngIf="angForm.controls['postcode'].errors.required" >
+        postcode is required.
+     </div>
+  </div>
+</div>
+
+    
+
+
+
+&nbsp;<div class="form-inline">
+  <label class="col-md-2" >Batch : </label>
+
+
+  <input type="text" class="form-control"  id="batch" name="batch" formControlName="batch"   style="width: 300px;max-height: 40px;"  size="40" />
+
+  &nbsp;
+  <div *ngIf="angForm.controls['batch'].invalid && (angForm.controls['batch'].dirty || angForm.controls['batch'].touched)" class="alert alert-danger form-inline"  style="width: 200px;max-height: 40px;" >
+      <div *ngIf="angForm.controls['batch'].errors.required" >
+        batch is required.
+     </div>
+  </div>
+</div>
+
+
+
+     
+
+
+
+
+
+      &nbsp;&nbsp;<div class="form-group col-md-4">
+      <button (click)="addStudent(angForm)"  [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Save</button>
+
+
+    </div>
+
+
+  </form>
+</div>

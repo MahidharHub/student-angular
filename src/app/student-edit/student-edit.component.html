@@ -1,0 +1,174 @@
+
+
+<div class="card">
+  <div class="card-header">
+    Edit Client
+  </div>
+  <div class="card-body" >
+    <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
+      <div class="form-inline"  >
+        <label for="firstName" class="col-md-2">First Name</label>
+        <input 
+            type="text"
+            class="form-control"
+            name="firstName"
+            #clientFirstName="ngModel"
+            [ngClass]="{'is-invalid':clientFirstName.errors && clientFirstName.touched}"
+            [(ngModel)]="student.firstName"
+            minlength="2"
+            required
+        >
+
+        <div [hidden]="!clientFirstName.errors?.required" class="invalid-feedback">
+          First name required
+        </div>
+
+        <div [hidden]="!clientFirstName.errors?.minlength" class="invalid-feedback">
+            Must be at least 2 characters
+        </div>
+      </div>
+
+      &nbsp; <div class="form-inline"  >
+          <label for="lastName" class="col-md-2">Last Name</label>
+          <input 
+              type="text"
+              class="form-control"
+              name="lastName"
+              #clientLastName="ngModel"
+              [ngClass]="{'is-invalid':clientLastName.errors && clientLastName.touched}"
+              [(ngModel)]="student.lastName"
+              minlength="2"
+              required
+          >
+  
+          <div [hidden]="!clientLastName.errors?.required" class="invalid-feedback">
+            Last name required
+          </div>
+  
+          <div [hidden]="!clientLastName.errors?.minlength" class="invalid-feedback">
+              Must be at least 2 characters
+          </div>
+        </div>
+
+
+
+        &nbsp;<div class="form-inline" >
+          <label for="enrolledCourse" class="col-md-2">Enrolled Course</label>
+          <input 
+              type="text"
+              class="form-control"
+              name="enrolledCourse"
+              #clientEnrolledCourse="ngModel"
+              [ngClass]="{'is-invalid':clientEnrolledCourse.errors && clientEnrolledCourse.touched}"
+              [(ngModel)]="student.enrolledCourse"
+              minlength="2"
+              required
+          >
+  
+          <div [hidden]="!clientEnrolledCourse.errors?.required" class="invalid-feedback">
+            First name required
+          </div>
+  
+          <div [hidden]="!clientEnrolledCourse.errors?.minlength" class="invalid-feedback">
+              Must be at least 2 characters
+          </div>
+        </div>
+
+
+        &nbsp;<div class="form-inline" >
+          <label for="enrolledDate" class="col-md-2">Enrolled Date</label>
+          <input 
+              type="text"
+              class="form-control"
+              name="enrolledDate"
+              #clientEnrolledDate="ngModel"
+              [ngClass]="{'is-invalid':clientEnrolledDate.errors && clientEnrolledDate.touched}"
+              [(ngModel)]="student.enrolledDate"
+              bsDatepicker
+              minlength="2"
+              required
+          >
+  
+          <div [hidden]="!clientEnrolledDate.errors?.required" class="invalid-feedback">
+            First name required
+          </div>
+  
+          <div [hidden]="!clientEnrolledDate.errors?.minlength" class="invalid-feedback">
+              Must be at least 2 characters
+          </div>
+        </div>
+
+        &nbsp; <div class="form-inline" >
+          <label for="city" class="col-md-2">City</label>
+          <input 
+              type="text"
+              class="form-control"
+              name="city"
+              #clientCity="ngModel"
+              [ngClass]="{'is-invalid':clientCity.errors && clientCity.touched}"
+              [(ngModel)]="student.city"
+              minlength="2"
+              required
+          >
+  
+          <div [hidden]="!clientCity.errors?.required" class="invalid-feedback">
+            First name required
+          </div>
+  
+          <div [hidden]="!clientCity.errors?.minlength" class="invalid-feedback">
+              Must be at least 2 characters
+          </div>
+        </div>
+
+
+        &nbsp; <div class="form-inline" >
+          <label for="postcode" class="col-md-2">Postcode</label>
+          <input 
+              type="text"
+              class="form-control"
+              name="postcode"
+              #clientPostcode="ngModel"
+              [ngClass]="{'is-invalid':clientPostcode.errors && clientPostcode.touched}"
+              [(ngModel)]="student.postcode"
+              minlength="2"
+              required
+          >
+  
+          <div [hidden]="!clientPostcode.errors?.required" class="invalid-feedback">
+            First name required
+          </div>
+  
+          <div [hidden]="!clientPostcode.errors?.minlength" class="invalid-feedback">
+              Must be at least 2 characters
+          </div>
+        </div>
+
+        &nbsp;<div class="form-inline" >
+          <label for="batch" class="col-md-2">Batch</label>
+          <input 
+              type="text"
+              class="form-control"
+              name="batch"
+              #clientBatch="ngModel"
+              [ngClass]="{'is-invalid':clientBatch.errors && clientBatch.touched}"
+              [(ngModel)]="student.batch"
+              minlength="2"
+              required
+          >
+  
+          <div [hidden]="!clientBatch.errors?.required" class="invalid-feedback">
+            First name required
+          </div>
+  
+          <div [hidden]="!clientBatch.errors?.minlength" class="invalid-feedback">
+              Must be at least 2 characters
+          </div>
+        </div>
+
+
+
+        &nbsp;&nbsp;
+        <input type="submit" value="Submit" class="btn btn-primary btn-block col-md-2">
+    </form>
+  </div>
+</div>

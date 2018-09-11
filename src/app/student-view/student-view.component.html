@@ -1,0 +1,35 @@
+<br>
+<div class="row">  
+<table  class="table table-sm" >
+  <thead class="thead-inverse">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Batch</th>
+      <th>City</th>
+      <th>Course</th>
+
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngFor="let student of filteredStudents | paginate: { itemsPerPage: 10, currentPage: page }" style="height: 10px;">
+        
+
+      <td >{{ student.firstName }} </td>
+      <td>{{ student.lastName }}</td>
+      <td>{{ student.batch  }}</td>
+      <td>{{ student.city  }}</td>
+      <td>{{ student.enrolledCourse  }}</td>
+      <td>  <button [routerLink]="['/student/edit/',student.id]" class="btn btn-primary">Edit</button> </td>
+      <td> <button (click)="deleteStudent(student.id)"  class="btn btn-warning">Delete</button></td>
+
+     
+    </tr>
+   
+  </tbody>
+  
+</table>
+<pagination-controls (pageChange)="page = $event"></pagination-controls>  
+
+</div>
+&nbsp;&nbsp;
